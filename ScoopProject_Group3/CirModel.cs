@@ -69,11 +69,11 @@ namespace ScoopProject_Group3
 
                 this.Sigma = Math.Sqrt(s / (hist - 2));
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine("Reduce number of historical data you choose or change start position!");
             }
-            
+
         }
     }
 }

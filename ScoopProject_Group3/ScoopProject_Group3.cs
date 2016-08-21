@@ -1,7 +1,7 @@
-﻿using System;
+﻿using PlotCharts;
+using System;
 using System.IO;
 using System.Windows.Forms;
-using PlotCharts;
 
 namespace ScoopProject_Group3
 {
@@ -100,7 +100,7 @@ namespace ScoopProject_Group3
             double[] backtest = BackTesting.compute(liborTicks, H, numSim, days, hist, time, ticksCount - 1, dt, choose);
 
             Convergence.compute(liborTicks, hist, time, ticksCount - 1, dt, 300, H);
-           
+
             // output results printed on .txt files
             string name = "cir_calibration_result.txt";
 
@@ -108,7 +108,7 @@ namespace ScoopProject_Group3
             writer.WriteLine("DATE \t ESTIMATED value \t ACTUAL value");
             for (int i = 0; i < backtest.Length; i++)
             {
-                writer.WriteLine(liborTicks[datePos + H + i].getDate().ToString("dd/MM/yyyy")+ "\t"+backtest[i]+"\t"+ liborTicks[datePos + H + i].getValue());
+                writer.WriteLine(liborTicks[datePos + H + i].getDate().ToString("dd/MM/yyyy") + "\t" + backtest[i] + "\t" + liborTicks[datePos + H + i].getValue());
             }
             writer.Close();
 

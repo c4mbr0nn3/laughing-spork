@@ -1,6 +1,6 @@
 ﻿using System;
-using System.IO;
 using System.Globalization;
+using System.IO;
 
 namespace ScoopProject_Group3
 {
@@ -56,7 +56,7 @@ namespace ScoopProject_Group3
                         array[i].setDate(tickDate);
                         if (double.TryParse(record[1], NumberStyles.Any, CultureInfo.InvariantCulture, out tickValue))
                         {
-                            array[i].setValue(tickValue); 
+                            array[i].setValue(tickValue);
                         }
                         else
                         {
@@ -76,13 +76,13 @@ namespace ScoopProject_Group3
 
         }
 
-        public static void fillMissing(Libor[] array,double dt)
+        public static void fillMissing(Libor[] array, double dt)
         {
             CirModel tempModel = new CirModel();
 
-            for (int i=0; i<array.Length;i++)
+            for (int i = 0; i < array.Length; i++)
             {
-                if (array[i].getValue()== -10)
+                if (array[i].getValue() == -10)
                 {
                     tempModel.estimate(array, 60, i - 1, dt);
                     array[i].setValue(MontecarloSim.compute(array, 100, 1, tempModel, array[i - 1].getValue(), dt, 0));

@@ -1,6 +1,6 @@
-﻿using System;
+﻿using MathNet.Numerics.Distributions;
 using MathNet.Numerics.Random;
-using MathNet.Numerics.Distributions;
+using System;
 
 namespace ScoopProject_Group3
 {
@@ -34,7 +34,7 @@ namespace ScoopProject_Group3
                         dz = dist.InverseCumulativeDistribution(prob[j]) * Math.Sqrt(dt);
                         r = (r + param.getAlpha() * param.getMu() * dt + param.getSigma() * Math.Sqrt(r * dt) * dz +
                                 (Math.Pow(param.getSigma(), 2) * dt * (Math.Pow(dz, 2) - 1)) / 4) / (1 + param.getAlpha() * dt);
-                    }  
+                    }
                 }
                 tempResult = tempResult + r;
             }

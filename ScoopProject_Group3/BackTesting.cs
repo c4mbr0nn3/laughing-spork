@@ -5,7 +5,7 @@ namespace ScoopProject_Group3
     class BackTesting
     {
         //we implement a method that return an array with the new rates using MC method
-        public static double[] compute (Libor[] array, int H, int numSim, int days, int hist, DateTime start, int max, double dt, int choose)
+        public static double[] compute(Libor[] array, int H, int numSim, int days, int hist, DateTime start, int max, double dt, int choose)
         {
             int startPos = Finder.find(array, start, 0, max);
             double[] interestR = new double[days];
@@ -39,7 +39,7 @@ namespace ScoopProject_Group3
                     }
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine("Reduce numbers of simulated days you choose or change start position!");
             }

@@ -16,7 +16,7 @@ namespace ScoopProject_Group3
             int mid = (max + min) / 2;
 
             //if the date in mid position is equal to the date we give as input it turns 0 an so we founded our date
-            if (DateTime.Compare(array[mid].getDate(),date)==0)
+            if (DateTime.Compare(array[mid].getDate(), date) == 0)
             {
                 return mid;
             }

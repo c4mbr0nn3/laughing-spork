@@ -20,7 +20,7 @@ namespace ScoopProject_Group3
             string name = "convergence.txt";
             StreamWriter writer2 = new StreamWriter(name);
             writer2.WriteLine("EULERO scheme \t MILSTEIN scheme \t EULERO error \t MILSTEIN error");
-            for (int i=0; i<numSim; i++)
+            for (int i = 0; i < numSim; i++)
             {
                 euler = MontecarloSim.compute(array, i + 1, H, modelParameters, r0, dt, 0); // Eulero;
                 eulError = Math.Abs(r0 - euler);
